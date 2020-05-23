@@ -484,7 +484,7 @@ body {
 
 .swing {
     animation: swing ease-in-out 1s infinite alternate;
-    transform-origin: center+20px;
+    transform-origin: center;
     float:auto;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
