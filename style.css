@@ -475,7 +475,14 @@ body {
     margin-left: 80%;
   }
 }
-body {background: #eee;}
+body {
+	background: #eee;
+	width: 22%;
+  	display:block;
+        margin-left: auto;
+        margin-right: auto;
+
+}
 .swing {
     animation: swing ease-in-out 1s infinite alternate;
     transform-origin: center+20px;
