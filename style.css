@@ -203,7 +203,7 @@ body {
 
 .layer p {
 	position: relative;
-	top: 100%;
+	top: 20%;
 	margin: 0;
 }
 
@@ -550,7 +550,6 @@ body {
 
 #flip {
   height:50px;
-  overflow:scroll;
 }
 
 #flip > div > div {
