@@ -183,7 +183,6 @@ body {
 	background-color: #222;
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
 	background-repeat: repeat;
-
 	font-family: Helvetica, sans-serif, 'Pacifico', cursive;
 	font-size: 16px;
 	color: #fff;
@@ -209,8 +208,6 @@ body {
 
 .layer.one {
 	background: #003444;
-	width: 100%;
-	height: 100%;
 }
 
 .layer.two {
