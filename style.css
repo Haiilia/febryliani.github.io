@@ -550,7 +550,7 @@ body {
 
 #flip {
   height:50px;
-  overflow:hidden;
+  overflow:scroll;
 }
 
 #flip > div > div {
