@@ -475,22 +475,28 @@ body {
     margin-left: 80%;
   }
 }
+
 .rapih {
 	width: 22%;
 	display:block;
-        margin-left: auto;
-        margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .swing {
     animation: swing ease-in-out 1s infinite alternate;
-	transform-origin: center;
-	float:center;
+    float:left;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .swing img {
     border: 5px solid #f8f8f8;
-display:block;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 .swing:after{
     content: '';
