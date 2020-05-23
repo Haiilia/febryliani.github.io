@@ -486,13 +486,15 @@ body {
     animation: swing ease-in-out 1s infinite alternate;
     float:center;
     width: 50%;
+    height: 100%;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
     margin-left: auto;
     margin-right: auto;
 }
 .swing img {
     border: 5px solid #f8f8f8;
-    width: 50%;
+    width: 100%;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
 
