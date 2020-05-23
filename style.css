@@ -264,111 +264,127 @@ body {
 		margin: 0 6px;
 	}
 }
-.center
-{
-    position: absolute;
-    top: 38%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background: url(bg.jpg);
-    background-size: cover;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    box-shadow: 0 5px 10px rgba(0,0,0,.5), 0 0 0 15px rgba(2,35,54,1);
+$particles: 50;
+$width: 500;
+$height: 500;
+
+// Create the explosion...
+$box-shadow: ();
+$box-shadow2: ();
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+               random($width)-$width / 2 + px
+               random($height)-$height / 1.2 + px
+               hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff
 }
-ul
-{
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    width: 100px;
-    animation: rotate 5s linear infinite;
-}
-ul.cr1
-{
-    top: 40%;
-    left: 20%;
-}
-ul.cr2
-{
-    top: 25%;
-    right: 25%;
-}
-ul.cr3
-{
-    top: 70%;
-    right: 15%;
-}
-ul li
-{
-    position: absolute;
-    width: 100px;
-    height: 2px;
-    background: #fff;
-    list-style: none;
-}
-ul li:nth-child(1)
-{
-    transform: rotate(0deg);
-}
-ul li:nth-child(2)
-{
-    transform: rotate(90deg);
-}
-ul li:nth-child(3)
-{
-    transform: rotate(45deg);
-}
-ul li:nth-child(4)
-{
-    transform: rotate(-45deg);
-}
-ul li:before
-{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #003444;
-    transform: scaleX(.5);
-    animation: animate 1s linear infinite;
-}
-p
-{
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    bottom: 10%;
-    color: #fff;
-    font-size: 5em;
-    text-shadow: 0 10px 20px rgba(0,0,0,.5);
-}
-@keyframes rotate
-{
-    0%
-    {
-        transform: rotate(0deg);
+@mixin keyframes ($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
     }
-    100%
-    {
-        transform: rotate(360deg);
+
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animationName} {
+        @content;
+    }
+
+    @keyframes #{$animationName} {
+        @content;
     }
 }
-@keyframes animate
-{
-    0%
-    {
-        transform: scaleX(.5);
-    }
-    50%
-    {
-        transform: scaleX(1);
-    }
-    100%
-    {
-        transform: scaleX(1);
-    }
+
+@mixin animation-delay ($settings) {
+    -moz-animation-delay: $settings;
+    -webkit-animation-delay: $settings;
+    -o-animation-delay: $settings;
+    -ms-animation-delay: $settings;
+    animation-delay: $settings;
+}
+
+@mixin animation-duration ($settings) {
+    -moz-animation-duration: $settings;
+    -webkit-animation-duration: $settings;
+    -o-animation-duration: $settings;
+    -ms-animation-duration: $settings;
+    animation-duration: $settings;
+}
+
+@mixin animation ($settings) {
+    -moz-animation: $settings;
+    -webkit-animation: $settings;
+    -o-animation: $settings;
+    -ms-animation: $settings;
+    animation: $settings;
+}
+
+@mixin transform ($settings) {
+    transform: $settings;
+    -moz-transform: $settings;
+    -webkit-transform: $settings;
+    -o-transform: $settings;
+    -ms-transform: $settings;
+}
+
+body {
+  margin:0;
+  padding:0;
+  background: #000;
+  overflow: hidden;
+}
+
+.pyro > .before, .pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: $box-shadow2;
+  @include animation((1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
+}
+    
+.pyro > .after {
+  @include animation-delay((1.25s, 1.25s, 1.25s));
+  @include animation-duration((1.25s, 1.25s, 6.25s));
+}
+        
+@include keyframes(bang) {
+  to {
+    box-shadow:$box-shadow;
+  }
+}
+    
+@include keyframes(gravity)  {
+  to {
+    @include transform(translateY(200px));
+    opacity: 0;
+  }
+}
+    
+@include keyframes(position) {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%, 59.9% {  
+    margin-top: 20%;
+    margin-left: 70%
+  }
+  60%, 79.9% {  
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%, 99.9% {  
+    margin-top: 30%;
+    margin-left: 80%;
+  }
 }
