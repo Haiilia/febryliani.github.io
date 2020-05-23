@@ -485,7 +485,7 @@ body {
 .swing {
     animation: swing ease-in-out 1s infinite alternate;
     float:center;
-    width: 50%;
+    width: 100%;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
     margin-left: auto;
     margin-right: auto;
