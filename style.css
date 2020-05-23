@@ -485,6 +485,8 @@ body {background: #eee;}
 .swing img {
     border: 5px solid #f8f8f8;
     display: block;
+	margin-left: auto;
+  margin-right: auto;
 }
 .swing:after{
     content: '';
