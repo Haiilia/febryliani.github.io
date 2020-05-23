@@ -479,14 +479,14 @@ body {background: #eee;}
 .swing {
     animation: swing ease-in-out 1s infinite alternate;
     transform-origin: center+20px;
-    float:left;
+    float:auto;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 .swing img {
     border: 5px solid #f8f8f8;
-    display: block;
-	margin-left: auto;
-  	margin-right: auto;
+    display:block;
+        margin-left: auto;
+        margin-right: auto;
 }
 .swing:after{
     content: '';
